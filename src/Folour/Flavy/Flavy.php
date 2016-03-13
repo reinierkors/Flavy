@@ -116,17 +116,18 @@ class Flavy extends Base
         if(!File::isWritable(dirname($output_path))) {
             throw new NotWritableException('The output path "'.$output_path.'" is not writable!');
         }
+
         $info = $this->info($file);
+        $fps = isset($info[0]['r_frame_rate']) ? explode('/', $info[0]['r_frame_rate'])[0] : 25;
 
         if($interval == null) {
-            $interval = 300;
-
+            $interval = 250;
             if(is_array($info)) {
                 $duration = $this->timestamp(explode('.', $info['format']['duration'])[0]);
 
                 $interval = round($duration / $count);
             }
-        } else
+        } else $interval = $interval * $fps;
 
         return $this->runCmd('get_thumbnails', [
             $file, $output_path, $interval
