@@ -130,7 +130,7 @@ class Flavy extends Base
         } else $interval = $interval * $fps;
 
         return $this->runCmd('get_thumbnails', [
-            $file, $output_path, $interval
+            $this->config['ffmpeg'], $file, $interval, $output_path
         ]);
     }
 
