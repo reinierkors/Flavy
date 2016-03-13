@@ -118,7 +118,7 @@ class Flavy extends Base
         }
 
         $info = $this->info($file);
-        $fps = isset($info[0]['r_frame_rate']) ? explode('/', $info[0]['r_frame_rate'])[0] : 25;
+        $fps = isset($info['streams'][0]['r_frame_rate']) ? explode('/', $info['streams'][0]['r_frame_rate'])[0] : 25;
 
         if($interval == null) {
             $interval = 250;
