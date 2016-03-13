@@ -160,6 +160,7 @@ class Flavy extends Base
      * Set output file
      *
      * @param string $outputPath
+     *
      * @return $this
      * @throws NotWritableException
      */
