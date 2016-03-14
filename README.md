@@ -31,26 +31,26 @@ Folour\Flavy\Provider\FlavyServiceProvider::class,
 ### Simple conversion from ogg to mp3, with change bitrate:
 ```php
 Flavy::from('path/to/file.ogg')
-		->to('path/to/converted/file.mp3')
-		->aBitrate(128)
-		->aCodec('libmp3lame')
-		->overwrite()
+	->to('path/to/converted/file.mp3')
+	->aBitrate(128)
+	->aCodec('libmp3lame')
+	->overwrite()
 ->run();
 ```
 ### Decrease bitrate and change channels to 1 (Mono)
 ```php
 Flavy::from('path/to/file.mp3')
-		->to('paths/to/new_file.mp3')
-		->aBitrate(64)
-		->channels(1)
+	->to('paths/to/new_file.mp3')
+	->aBitrate(64)
+	->channels(1)
 ->run();
 ```
 ### Get file info:
 ```php
-    Flavy::info('path/to/file.mp3'); //returns array with file info
-    Flavy::info('path/to/file.mp3', 'xml'); //returns xml string with file info
-    Flavy::info('path/to/file.mp3', 'csv'); //returns csv string with file info
-    Flavy::info('path/to/file.mp3', 'json', false); //returns json string with file info
+Flavy::info('path/to/file.mp3'); //returns array with file info
+Flavy::info('path/to/file.mp3', 'xml'); //returns xml string with file info
+Flavy::info('path/to/file.mp3', 'csv'); //returns csv string with file info
+Flavy::info('path/to/file.mp3', 'json', false); //returns json string with file info
 ```
 ### Make thumbnails:
 ```php
