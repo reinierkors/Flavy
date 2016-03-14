@@ -43,7 +43,7 @@ abstract class Commands
         ],
 
         'get_thumbnails' => [
-            'cmd' => '%s -i "%s" -vf fps=fps=1/%d "%s"'
+            'cmd' => '%s -i "%s" -vf fps=fps=1/%d -vframes %d "%s"'
         ]
     ];
 

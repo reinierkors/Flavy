@@ -128,7 +128,7 @@ class Flavy extends Base
         }
 
         return $this->runCmd('get_thumbnails', [
-            $this->config['ffmpeg'], $file, $interval, $output_path
+            $this->config['ffmpeg'], $file, $interval, $count, $output_path
         ]);
     }
 
