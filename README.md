@@ -7,13 +7,13 @@ FFmpeg layer for Laravel 5.2, this is a fork of rafasamp/sonus package.
 Simple API for convert audio/video files, get thumbnails from video, information of files
 
 ## Installation
-Install Flavy via composer
+### Install Flavy via composer
 
     composer require folour/flavy "1.0.0-beta"
 
-or for dev version (latest)
+### or for dev version (latest)
 
-		composer require folour/flavy dev-master
+    composer require folour/flavy dev-master
 
 ### In config/app.php to providers array add:
 ```php
