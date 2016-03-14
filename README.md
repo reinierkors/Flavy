@@ -36,4 +36,18 @@ Get file info:
     Flavy::info('path/to/file.mp3', 'csv'); //returns csv string with file info
     Flavy::info('path/to/file.mp3', 'json', false); //returns json string with file info
     
+Make thumbnails:
+
+    Flavy::thumbnail('path/to/video.mov', 'path/to/images/thumb_%d.jpg', 10); //Make 10 thumbnail and calculate time interval $duration/$count
+    Flavy::thumbnail('path/to/video.mov', 'path/to/images/thumb_%d.jpg', 10, 30); //Make 10 thumbnail with specified interval
+    
+Get ffmpeg base information:
+
+    Flavy::encoders(); //return a nested array with audio and video encoders
+    Flavy::decoders(); //return a nested array with audio and video decoders
+    Flavy::formats(); //return array with supported formats
+    
+    Flavy::canEncode('encoder'); //Check encoder support
+    Flavy::canDecode('decoder'); //Check decoder support
+    
 		
