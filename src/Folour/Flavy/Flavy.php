@@ -99,7 +99,7 @@ class Flavy extends Base
      * Create thumbnails from video
      *
      * @param string $file input file
-     * @param string $output_path output file path template
+     * @param string $outputPath output file path template
      * @param int $count thumbnails count
      * @param int|null $interval frames interval in seconds
      *
@@ -107,14 +107,14 @@ class Flavy extends Base
      * @throws FileNotFoundException
      * @throws NotWritableException
      */
-    public function thumbnail($file, $output_path, $count = 1, $interval = null)
+    public function thumbnail($file, $outputPath, $count = 1, $interval = null)
     {
         $this->isPossible('input');
         if(!File::exists($file)) {
             throw new FileNotFoundException('The input file "'.$file.'" not exists!');
         }
-        if(!File::isWritable(dirname($output_path))) {
-            throw new NotWritableException('The output path "'.$output_path.'" is not writable!');
+        if(!File::isWritable(dirname($outputPath))) {
+            throw new NotWritableException('The output path "'.$outputPath.'" is not writable!');
         }
 
         if($interval == null) {
@@ -128,7 +128,7 @@ class Flavy extends Base
         }
 
         return $this->runCmd('get_thumbnails', [
-            $this->config['ffmpeg'], $file, $interval, $count, $output_path
+            $this->config['ffmpeg'], $file, $interval, $count, $outputPath
         ]);
     }
 
