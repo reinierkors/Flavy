@@ -37,6 +37,14 @@ Simple API for convert audio/video files, get thumbnails from video, information
         ->overwrite()
 		->run();
 ```
+### Decrease bitrate and change channels to 1 (Mono)
+```php
+		Flavy::from('path/to/file.mp3')
+				->to('paths/to/new_file.mp3')
+				->aBitrate(64)
+				->channels(1)
+		->run();
+```
 ### Get file info:
 ```php
     Flavy::info('path/to/file.mp3'); //returns array with file info
