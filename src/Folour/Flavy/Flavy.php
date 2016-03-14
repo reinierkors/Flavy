@@ -117,17 +117,15 @@ class Flavy extends Base
             throw new NotWritableException('The output path "'.$output_path.'" is not writable!');
         }
 
-        $info = $this->info($file);
-        $fps = isset($info['streams'][0]['r_frame_rate']) ? explode('/', $info['streams'][0]['r_frame_rate'])[0] : 25;
-
         if($interval == null) {
-            $interval = 250;
+            $interval = 10;
+            $info = $this->info($file);
             if(is_array($info)) {
                 $duration = $this->timestamp(explode('.', $info['format']['duration'])[0]);
 
                 $interval = round($duration / $count);
             }
-        } else $interval = $interval * $fps;
+        }
 
         return $this->runCmd('get_thumbnails', [
             $this->config['ffmpeg'], $file, $interval, $output_path
