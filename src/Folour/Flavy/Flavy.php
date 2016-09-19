@@ -20,7 +20,7 @@ class Flavy extends Base
     /**
      * Flavy version
      */
-    const VERSION = '1.0';
+    const VERSION = '1.0.1';
 
     /**
      *
@@ -85,7 +85,7 @@ class Flavy extends Base
         }
 
         $format = in_array($format, ['json', 'xml', 'csv']) ? $format : 'json';
-        $data = $this->runCmd('get_file_info', [$this->config['ffprobe'], $format, $file]);
+        $data = $this->runCmd('get_file_info', [$this->config['ffprobe_path'], $format, $file]);
         if($format == 'json' && $decode === true) {
             return json_decode($data, true);
         }
@@ -128,7 +128,7 @@ class Flavy extends Base
         }
 
         return $this->runCmd('get_thumbnails', [
-            $this->config['ffmpeg'], $file, $interval, $count, $outputPath
+            $this->config['ffmpeg_path'], $file, $interval, $count, $outputPath
         ]);
     }
 
@@ -147,7 +147,7 @@ class Flavy extends Base
             throw new FileNotFoundException('The input file "'.$file.'" not exists!');
         }
 
-        $this->parameters[] = sprintf('%s -i "%s"', $this->config['ffmpeg'], $file);
+        $this->parameters[] = sprintf('%s -i "%s"', $this->config['ffmpeg_path'], $file);
         $this->nextContext = 'output';
 
         return $this;

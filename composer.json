@@ -2,8 +2,8 @@
   "name": "folour/flavy",
   "description": "FFmpeg layer for Laravel 5.2, this is a fork of rafasamp/sonus package",
   "keywords": ["laravel", "ffmpeg", "audio", "video", "converter", "conversion", "video thumbnailer"],
-  "minimum-stability": "beta",
-  "version": "1.0.0-beta",
+  "minimum-stability": "stable",
+  "version": "1.0.1",
   "license": "GPLv3",
   "authors": [
     {
