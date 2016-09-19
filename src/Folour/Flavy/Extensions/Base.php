@@ -17,8 +17,8 @@ class Base extends Commands
      * @var array
      */
     protected $config = [
-        'ffmpeg'   => 'ffmpeg',
-        'ffprobe'  => 'ffprobe'
+        'ffmpeg_path'   => 'ffmpeg',
+        'ffprobe_path'  => 'ffprobe'
     ];
 
     /**
