@@ -60,7 +60,7 @@ class Base extends Commands
     public function formats()
     {
         if($this->_info['formats'] === null) {
-            $data = $this->runCmd('get_formats', [$this->config['ffmpeg']]);
+            $data = $this->runCmd('get_formats', [$this->config['ffmpeg_path']]);
             if(is_array($data)) {
                 $this->_info['formats'] = array_combine($data['format'], $data['mux']);
             }
@@ -82,7 +82,7 @@ class Base extends Commands
     public function encoders()
     {
         if($this->_info['encoders']['audio'] === []) {
-            $data = $this->runCmd('get_encoders', [$this->config['ffmpeg']]);
+            $data = $this->runCmd('get_encoders', [$this->config['ffmpeg_path']]);
             if(is_array($data)) {
                 foreach($data['type'] as $key => $type) {
                     $this->_info['encoders'][($type == 'A' ? 'audio' : 'video')][] = $data['format'][$key];
@@ -106,7 +106,7 @@ class Base extends Commands
     public function decoders()
     {
         if($this->_info['decoders']['audio'] === []) {
-            $data = $this->runCmd('get_decoders', [$this->config['ffmpeg']]);
+            $data = $this->runCmd('get_decoders', [$this->config['ffmpeg_path']]);
             if(is_array($data)) {
                 foreach($data['type'] as $key => $type) {
                     $this->_info['decoders'][($type == 'A' ? 'audio' : 'video')][] = $data['format'][$key];
