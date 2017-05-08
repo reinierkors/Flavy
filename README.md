@@ -9,7 +9,7 @@ Simple API for convert audio/video files, get thumbnails from video, information
 ## Installation
 ### Install Flavy via composer
 
-    composer require folour/flavy "^1.0"
+    composer require folour/flavy
 
 ### In config/app.php to providers array add:
 ```php
