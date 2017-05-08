@@ -1,8 +1,8 @@
-# Flavy - a simple ffmpeg layer for laravel 5.2
+# Flavy - a simple ffmpeg layer for laravel 5.2-5.4
 [![downloads](https://poser.pugx.org/folour/flavy/downloads.png)](https://packagist.org/packages/folour/flavy)
 [![license](https://poser.pugx.org/folour/flavy/license.png)](https://packagist.org/packages/folour/flavy)
 
-FFmpeg layer for Laravel 5.2, this is a fork of rafasamp/sonus package.
+FFmpeg layer for Laravel 5.2-5.4, this is a fork of rafasamp/sonus package.
 
 Simple API for convert audio/video files, get thumbnails from video, information of files
 
