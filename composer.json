@@ -18,5 +18,15 @@
     "psr-4": {
       "Folour\\Flavy\\": "src/Folour/Flavy"
     }
-  }
+  },
+  "extra": {
+        "laravel": {
+            "providers": [
+                "Folour\\Flavy\\Provider\\FlavyServiceProvider"
+            ],
+            "aliases": {
+                "Flavy": "Folour\\Flavy\\FlavyFacade"
+            }
+        }
+    },
 }
